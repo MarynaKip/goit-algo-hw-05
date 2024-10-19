@@ -12,10 +12,10 @@ def binary_search(arr, x):
         attepms +=1
         # якщо х більше ніж середне значення і менше ніж наступне за середнім - повертаємо більше за середне
         if arr[mid] < x and x < arr[mid+1]:
-            return (attepms, arr[mid + 1])
+            return (arr[mid + 1], attepms)
         # якщо х  дорівнює сер значенню або менше ніж середне значення і більше ніж попередне перед середнім - повертаємо меньше за середне        
         elif x == arr[mid] or (arr[mid] > x and x > arr[mid-1]):
-            return (attepms, arr[mid])
+            return (arr[mid], attepms)
         
         # якщо x більше за значення посередині списку, ігноруємо ліву половину
         elif arr[mid] < x:
@@ -25,4 +25,4 @@ def binary_search(arr, x):
         elif arr[mid] > x:
             high = mid - 1
  
-print(binary_search([1/2, 2/2, 3/2, 4/2], 2/3))
+print(binary_search([1.2 , 4.5,   7.9,   10.2], 3))
